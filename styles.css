@@ -1,0 +1,236 @@
+body {
+  font-family: roboto;
+  background-color: black;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000; /* Latar belakang hitam seperti langit malam */
+}
+
+.meteor-shower {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -9999;
+}
+
+.meteor-shower::before {
+  content: "";
+  position: absolute;
+  top: -200px; /* Mulai dari luar layar */
+  left: 50%;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(white, rgba(255, 255, 255, 0));
+  transform: rotate(45deg); /* Memiringkan meteor */
+  animation: meteor 2s linear infinite;
+}
+
+@keyframes meteor {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px) translateY(600px) rotate(45deg); /* Gerakan diagonal turun */
+    opacity: 0;
+  }
+}
+
+.meteor-shower::after {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 80%;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(white, rgba(255, 255, 255, 0));
+  transform: rotate(45deg);
+  animation: meteor 1.5s linear infinite;
+}
+
+@keyframes meteor {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px) translateY(600px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.contener {
+  position: relative;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(81, 255, 255, 0.2);
+  opacity: 1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 1px 1px 1px aqua;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 5px;
+}
+nav h1 {
+  color: rgb(0, 233, 233);
+  font-family: Pacifico;
+  font-size: 1em;
+  letter-spacing: 3px;
+}
+nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(0, 255, 255);
+  margin-left: 1vh;
+  transition: 0.3;
+  transform: scale(1);
+  display: inline-block;
+}
+nav ul li a:hover {
+  transform: scale(1.1);
+  color: rgb(0, 255, 170);
+}
+.profil {
+  margin-left: 50%;
+}
+.profil h4 {
+  color: rgb(0, 255, 255);
+  font-family: julee;
+  margin-top: 1rem;
+  transition: 0.5s;
+  transform: scale(1);
+  text-shadow: 1px 1px 1px aqua;
+}
+.profil h4:hover {
+  transform: scale(1.1);
+  color: rgb(0, 255, 170);
+}
+.profil p {
+  color: rgb(0, 255, 255);
+  font-size: 0.6rem;
+  margin-left: 3em;
+  transition: 0.5s;
+  transform: scale(1);
+  text-shadow: 1px 1px 1px aqua;
+}
+.profil p:hover {
+  transform: scale(1.1);
+  color: rgb(0, 255, 170);
+}
+.profil img {
+  margin-top: 2rem;
+  width: 200px; /* Ukuran lebar gambar */
+  height: 200px; /* Ukuran tinggi gambar, sama dengan lebar agar berbentuk bulat */
+  border-radius: 50%; /* Membuat sudut gambar menjadi bulat */
+  object-fit: cover; /* Menyesuaikan gambar agar tetap proporsional di dalam area bulat */
+  border: 5px solid rgb(0, 255, 255); /* Tambahkan border opsional */
+  height: 200px; /* Ukuran tinggi gambar, sama dengan lebar agar berbentuk bulat */
+  transition: 0.5s;
+}
+.profil img:hover {
+  transform: scale(1.1);
+}
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Membuat jarak antar card */
+  flex-wrap: wrap; /* Agar card responsif di layar kecil */
+  max-width: 800px; /* Maksimal lebar kontainer */
+  margin: 20px;
+}
+
+/* Card utama */
+.card {
+  background-color: rgba(81, 255, 255, 0.2);
+  color: aqua;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px aqua;
+  overflow: hidden;
+  flex-basis: calc(
+    50% - 10px
+  ); /* Membagi card menjadi 2, dengan sedikit jarak */
+  margin-top: 20px;
+  margin-bottom: 60px; /* Spasi bawah antar card */
+  transition: 0.5s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+/* Gaya gambar dalam card */
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* Gaya konten dalam card */
+.card-content {
+  padding: 20px;
+}
+
+.card-content h4 {
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  line-height: 1.6;
+  font-size: 0.5em;
+}
+footer {
+  background-color: rgba(81, 255, 255, 0.2);
+  color: aqua;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  box-shadow: 1px 1px 1px aqua;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .profil img {
+    width: 150px; /* Ukuran lebar gambar */
+    height: 150px; /* Ukuran tinggi gambar, sama dengan lebar agar berbentuk bulat */
+  }
+  .profil {
+    margin-left: 30%;
+  }
+  .profil h4,
+  p {
+    display: inline-block;
+    margin-left: -15px;
+  }
+  .profil p {
+    margin-left: 10px;
+  }
+  .contener .card h2,
+  p {
+    display: flex;
+  }
+
+  /* Gaya gambar dalam card */
+  .card img {
+    width: 100%;
+    height: 100px;
+  }
+
+  .card-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .card-content p {
+    line-height: 1.6;
+  }
+}
