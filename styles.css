@@ -2,66 +2,6 @@ body {
   font-family: roboto;
   background-color: black;
 }
-body {
-  margin: 0;
-  overflow: hidden;
-  background: #000; /* Latar belakang hitam seperti langit malam */
-}
-
-.meteor-shower {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -9999;
-}
-
-.meteor-shower::before {
-  content: "";
-  position: absolute;
-  top: -200px; /* Mulai dari luar layar */
-  left: 50%;
-  width: 2px;
-  height: 200px;
-  background: linear-gradient(white, rgba(255, 255, 255, 0));
-  transform: rotate(45deg); /* Memiringkan meteor */
-  animation: meteor 2s linear infinite;
-}
-
-@keyframes meteor {
-  0% {
-    transform: translateX(-50%) translateY(0) rotate(45deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(300px) translateY(600px) rotate(45deg); /* Gerakan diagonal turun */
-    opacity: 0;
-  }
-}
-
-.meteor-shower::after {
-  content: "";
-  position: absolute;
-  top: -200px;
-  left: 80%;
-  width: 2px;
-  height: 200px;
-  background: linear-gradient(white, rgba(255, 255, 255, 0));
-  transform: rotate(45deg);
-  animation: meteor 1.5s linear infinite;
-}
-
-@keyframes meteor {
-  0% {
-    transform: translateX(-50%) translateY(0) rotate(45deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(300px) translateY(600px) rotate(45deg);
-    opacity: 0;
-  }
-}
-
 .contener {
   position: relative;
 }
