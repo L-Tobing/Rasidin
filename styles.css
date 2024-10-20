@@ -97,7 +97,7 @@ nav ul li a:hover {
     50% - 10px
   ); /* Membagi card menjadi 2, dengan sedikit jarak */
   margin-top: 20px;
-  margin-bottom: 60px; /* Spasi bawah antar card */
+  margin-bottom: 90px; /* Spasi bawah antar card */
   transition: 0.5s;
 }
 .card:hover {
